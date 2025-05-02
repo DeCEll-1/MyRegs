@@ -5,4 +5,4 @@ Windows Registry Editor Version 5.00
 "Icon"="wt.exe"
 
 [HKEY_CLASSES_ROOT\Directory\Background\shell\Open Terminal Here Admin\command]
-@="cmd /c echo|set/p=\"%V\"|powershell -NoP -W 1 -NonI -NoL \"SaPs 'cmd' -Args '/c \"\"\"cd /d',$([char]34+$Input+[char]34),'^&^& start /b wt.exe\"\"\"' -Verb RunAs\""
+@="cmd /c echo|set/p=\"%V\"|powershell -NoP -W 1 -NonI -NoL \"Start-Process -FilePath 'wt.exe' -ArgumentList '-d',$Input -Verb RunAs\""
